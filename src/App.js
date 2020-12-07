@@ -26,7 +26,13 @@ class App extends Component {
     } else if (this.state.whichComponentToShow === "Counter"){
       return (
         <div className="App">
-          <Counter initialCount={0} />
+          <div style={
+            this.state.visible ? {} : {display: "none "
+              }
+            }
+          >
+            <Counter initialCount={0} />
+          </div>
         </div>
       );
     }
