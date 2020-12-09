@@ -4,41 +4,21 @@ import './App.css';
 // import { Body, Body2 } from './components/Body'
 // import { Header } from "./components/Header";
 // import { Counter } from "./components/Counter";
-import { ImageSlider } from "./components/ImageSlider";
-import { Counter } from "./components/Counter";
+//import { ImageSlider } from "./components/ImageSlider";
+//import { Counter } from "./components/Counter";
+import MyForm from "./components/MyForm";
 class App extends Component {
   state = {
       visible: true,
-      whichComponentToShow: 'ImageSlider'
   }
   render(){
-
-    if (this.state.whichComponentToShow === "ImageSlider") {
-      return (
+    return (
       <div className="App">
-        <ImageSlider />
-        <button onClick={() => {
-          this.setState({ whichComponentToShow: "Counter"});
-        }}
-        >Show Counter</button>
+        <MyForm />
       </div>
-      );
-    } else if (this.state.whichComponentToShow === "Counter"){
-      return (
-        <div className="App">
-          <div style={
-            this.state.visible ? {} : {display: "none "
-              }
-            }
-          >
-            <Counter initialCount={0} />
-          </div>
-        </div>
-      );
-    }
-
-    return null;
+    );
   }
 }
+
 
 export default App;
